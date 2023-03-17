@@ -4,6 +4,7 @@ node_modules
 .DS_Store/
 .history
 package-lock.json
+notes.md
 
 
 # Logs
