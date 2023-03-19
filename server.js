@@ -25,12 +25,17 @@ const db = mysql.createConnection(
   console.log(`Connected to the employee_db database.`)
 );
 
+// Connect to MySQL
 db.connect((err) => {
     if (err) {throw err;
     } 
     console.log("MySQL is connected");
 });
 
+// Default response for any other request (Not Found)
+app.use((req, res) => {
+  res.status(404).end();
+});
 
 // Hardcoded query: DELETE FROM course_names WHERE id = 3;
 
@@ -42,20 +47,22 @@ db.connect((err) => {
 // });
 
 
-// Query database
-// db.query('SELECT * FROM department', function (err, results) {
-//   console.log(results);
-// });
 
-// Default response for any other request (Not Found)
-// app.use((req, res) => {
-//   res.status(404).end();
-// });
+// Query database i think
+db.query('SELECT * FROM department', function (err, results) {
+  console.log(results);
+});
 
+db.query('SELECT * FROM roles', function (err, results) {
+    console.log(results);
+  });
+
+db.query('SELECT * FROM employees', function (err, results) {
+    console.log(results);
+  });
+  
 
 // initialize the application 
-
-
 
 
 app.listen(PORT, () => {
