@@ -25,16 +25,12 @@ const db = mysql.createConnection(
   console.log(`Connected to the employees_db database.`)
 );
 
-db.connect();
-
-app.get('/users', (req, res) => {
-    const sql = 'SELECT * FROM users';
-
-    db.query(sql, (err, result) => {
-        if(err) throw err;
-        res.send();
-    });
+db.connect((err) => {
+    if (err) {throw err;
+    } 
+    console.log("MySQL is connected");
 });
+
 
 // Hardcoded query: DELETE FROM course_names WHERE id = 3;
 
@@ -45,6 +41,19 @@ app.get('/users', (req, res) => {
 //   console.log(result);
 // });
 
+
+// Insert employee 1
+app.get("/employee1", (req, res) => {
+  let post = { name: "Jake Smith", designation: "Chief Executive Officer" };
+  let sql = "INSERT INTO employees_db SET ?";
+  let query = db.query(sql, post, (err) => {
+    if (err) {
+      throw err;
+    }
+    res.send("Employee 1 added");
+  });
+});
+
 // Query database
 db.query('SELECT * FROM department', function (err, results) {
   console.log(results);
@@ -54,6 +63,11 @@ db.query('SELECT * FROM department', function (err, results) {
 app.use((req, res) => {
   res.status(404).end();
 });
+
+
+// initialize the application 
+
+
 
 
 app.listen(PORT, () => {
