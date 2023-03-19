@@ -16,11 +16,9 @@ VALUES (1, "Sales Lead", 110000, 1),
        (9, "Lawyer", 120000, 4);
 
 INSERT INTO employees (id, first_name, last_name, role_id, manager_id)
-VALUES (1, "Lacey", "Angarita", 8, 16),
-       (5, "Peter", "Parker", 2, 8),
-       (8, "Tony", "Stark", 3, NULL),
-       (9, "Thor", "OdinSon", 2, 12),
-       (12, "Mickey", "Mouse", 1, NULL),
-       (15, "Donald", "Duck", 5, NULL),
-       (16, "Obiwan", "Kenobi", 7, NULL),
-       (17, "Darth", "Vador", 6, 15);
+VALUES (1, "Lacey", "Angarita", 8, NULL),
+       (5, "Peter", "Parker", 3, NULL),
+       (8, "Tony", "Stark", 3, 5),
+       (9, "Thor", "OdinSon", 1, NULL),
+       (16, "Obiwan", "Kenobi", 9, 1),
+       (17, "Darth", "Vador", 6, NULL);
