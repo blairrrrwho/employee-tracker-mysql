@@ -20,9 +20,9 @@ const db = mysql.createConnection(
     user: 'root',
     // MySQL password
     password: 'kurtcobain',
-    database: 'employees_db'
+    database: 'employee_db'
   },
-  console.log(`Connected to the employees_db database.`)
+  console.log(`Connected to the employee_db database.`)
 );
 
 db.connect((err) => {
@@ -42,27 +42,15 @@ db.connect((err) => {
 // });
 
 
-// Insert employee 1
-app.get("/employee1", (req, res) => {
-  let post = { name: "Jake Smith", designation: "Chief Executive Officer" };
-  let sql = "INSERT INTO employees_db SET ?";
-  let query = db.query(sql, post, (err) => {
-    if (err) {
-      throw err;
-    }
-    res.send("Employee 1 added");
-  });
-});
-
 // Query database
-db.query('SELECT * FROM department', function (err, results) {
-  console.log(results);
-});
+// db.query('SELECT * FROM department', function (err, results) {
+//   console.log(results);
+// });
 
 // Default response for any other request (Not Found)
-app.use((req, res) => {
-  res.status(404).end();
-});
+// app.use((req, res) => {
+//   res.status(404).end();
+// });
 
 
 // initialize the application 
