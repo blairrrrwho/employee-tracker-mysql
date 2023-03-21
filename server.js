@@ -7,6 +7,7 @@ const figlet = require('figlet');
 
 const db = require('./config/connection');
 const {query} = require('./config/connection');
+const initialPrompt = require('./lib/initialPrompt');
 // const initialPrompt = require('./lib/initialPrompt');
 
 const app = express();
@@ -47,7 +48,7 @@ db.query('SELECT * FROM employees', function (err, results) {
 // });
 
 
-
+initialPrompt();
 
 // Connect to MySQL
 db.connect((err) => {
