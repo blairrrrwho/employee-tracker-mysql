@@ -2,13 +2,16 @@
 const express = require('express');
 // const mysql2 = require('mysql2');
 const inquirer = require('inquirer');
-const conTable = require('console.table');
+const cTable = require('console.table');
+const figlet = require('figlet');
 
 const db = require('./config/connection');
 const {query} = require('./config/connection');
+// const initialPrompt = require('./lib/initialPrompt');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 
 // Express middleware
 app.use(express.urlencoded({ extended: false }));
@@ -17,12 +20,6 @@ app.use(express.json());
 
 
 
-
-// Create
-// Read
-// Delete
-// left join
-// bonuses
 
 
 
@@ -40,8 +37,6 @@ db.query('SELECT * FROM employees', function (err, results) {
   });
   
 
-
-
 // Hardcoded query: DELETE FROM course_names WHERE id = 3;
 
 // db.query(`DELETE FROM course_names WHERE id = ?`, 3, (err, result) => {
@@ -52,6 +47,8 @@ db.query('SELECT * FROM employees', function (err, results) {
 // });
 
 
+
+
 // Connect to MySQL
 db.connect((err) => {
     if (err) {throw err;
@@ -59,13 +56,11 @@ db.connect((err) => {
     console.log("MySQL is connected");
 });
 
-// initialize the application 
-
-
 // Default response for any other request (Not Found)
 app.use((req, res) => {
   res.status(404).end();
 });
+
 
 app.listen(PORT, () => {
     console.log(`Server is now listening on port ${PORT}`);
