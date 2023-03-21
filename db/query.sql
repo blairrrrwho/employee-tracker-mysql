@@ -4,12 +4,8 @@ SELECT
 FROM department
 
 -- view all roles / SELECT * FROM roles
--- SELECT roles.id, roles.title, department.dep_name AS department, salary
--- FROM roles
--- INNER JOIN department ON roles.department_id = department.id
--- ORDER BY roles.id ASC
 SELECT 
-    roles.id AS "Role ID", roles.title AS "Job Title",
+    roles.id AS 'Role ID', roles.title AS 'Job Title',
     department.dep_name AS Department, salary AS Salary
 FROM roles
     JOIN department ON roles.department_id = department.id
@@ -32,13 +28,21 @@ ORDER BY
     employees.last_name ASC;
 
 -- add a department
+INSERT INTO department (dep_name) 
+VALUES ('Field Ops')
 
 -- add a role
+INSERT INTO roles (title, salary, department_id) 
+VALUES ('Jr Developer', 75000, 2);
 
 -- add an employee
+INSERT INTO employees (first_name, last_name, role_id, manager_id) 
+VALUES ('Bruce', 'Willis', 2, null)
 
 -- update employee role
-
+UPDATE employees
+SET role_id = 2
+WHERE id = 16
 
 
 
