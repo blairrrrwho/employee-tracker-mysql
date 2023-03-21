@@ -6,7 +6,7 @@ const cTable = require('console.table');
 const figlet = require('figlet');
 
 const db = require('./config/connection');
-const { query } = require('./config/connection');
+// const { query } = require('./config/connection');
 
 const initialPrompt = require('./lib/initialPrompt');
 
