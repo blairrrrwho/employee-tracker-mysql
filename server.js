@@ -1,7 +1,11 @@
-// Import and require express and mysql2
+// Import and require
 const express = require('express');
-// const mysql = require('mysql2');
+// const mysql2 = require('mysql2');
+const inquirer = require('inquirer');
+const conTable = require('console.table');
+
 const db = require('./config/connection');
+const {query} = require('./config/connection');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -9,6 +13,9 @@ const PORT = process.env.PORT || 3001;
 // Express middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+
+
 
 
 // Create
