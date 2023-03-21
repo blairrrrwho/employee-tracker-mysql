@@ -6,11 +6,9 @@ const cTable = require('console.table');
 const figlet = require('figlet');
 
 const db = require('./config/connection');
-// const { query } = require('./config/connection');
+const { query } = require('./config/connection');
 
 const initialPrompt = require('./lib/initialPrompt');
-
-// const viewAllDepartments = require('./lib/viewAllDepartments');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
