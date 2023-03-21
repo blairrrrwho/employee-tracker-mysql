@@ -49,17 +49,7 @@ db.connect((err) => {
     throw err;
   }
   console.log("MySQL is connected");
-  console.log(
-    `==========================================================================`
-  );
-  console.log(``);
-  console.log(figlet.textSync('             Employee'));
-  console.log(figlet.textSync('             Manager'));
-  console.log(``);
-  console.log(``);
-  console.log(
-    `==========================================================================`
-  );
+
   initialPrompt();
 });
 
