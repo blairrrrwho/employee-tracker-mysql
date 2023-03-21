@@ -51,9 +51,3 @@ WHERE id = 16
 -- delete a role
 -- delete an employee
 -- view total utilized budget of a specific department
-
--- -- slect all employees
--- SELECT employees.first_name, employees.last_name FROM employees
-
--- -- select title from roles table --
--- SELECT title FROM roles
