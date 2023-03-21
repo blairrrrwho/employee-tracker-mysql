@@ -9,7 +9,7 @@ FROM department
 -- INNER JOIN department ON roles.department_id = department.id
 -- ORDER BY roles.id ASC
 SELECT 
-    roles.title AS 'Job Title', roles.id AS 'Role ID', 
+    roles.id AS "Role ID", roles.title AS "Job Title",
     department.dep_name AS Department, salary AS Salary
 FROM roles
     JOIN department ON roles.department_id = department.id
@@ -17,13 +17,13 @@ ORDER BY roles.id ASC
 
 -- view all employees / SELECT * FROM employees
 SELECT 
-    employees.id AS 'Employee ID', 
-    employees.first_name AS 'First Name', 
-    employees.last_name AS 'Last Name', 
-    roles.title AS 'Job Title', 
-    department.dep_name AS 'Department', 
-    roles.salary AS 'Salary',
-    CONCAT(manager.first_name, ' ', manager.last_name) AS 'Manager'
+    employees.id AS "Employee ID", 
+    employees.first_name AS "First Name", 
+    employees.last_name AS "Last Name", 
+    roles.title AS "Job Title", 
+    department.dep_name AS "Department", 
+    roles.salary AS "Salary",
+    CONCAT(manager.first_name, " ", manager.last_name) AS "Manager"
 FROM employees
     JOIN roles ON employees.role_id = roles.id
     JOIN department ON roles.department_id = department.id
