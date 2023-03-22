@@ -37,7 +37,7 @@ VALUES ('Coordinator', 75000, 2);
 SELECT id, title FROM roles
 
 -- view id, first_name and last_name from employees
--- for addEmployee
+-- for addEmployee, delete employee
 SELECT id, first_name, last_name FROM employees ORDER BY id ASC
 
 SELECT id, employees.first_name, employees.last_name FROM employees
@@ -53,7 +53,7 @@ UPDATE employees
 SET role_id = 5
 WHERE id = 9
 
--- 
+----
 -- select all employees by first name, last name 
 SELECT employees.first_name AS 'First Name', 
 employees.last_name AS 'Last Name' 
@@ -73,8 +73,9 @@ FROM employees
 ORDER BY 
     manager.last_name ASC;
 
-
 -- update employee managers
+
+
 -- view all employees by manager
 -- view all employees by department
 -- delete a department
