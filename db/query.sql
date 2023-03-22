@@ -33,7 +33,7 @@ VALUES ("Field Ops")
 
 -- add a role
 INSERT INTO roles (title, salary, department_id) 
-VALUES ("Jr Developer", 75000, 2);
+VALUES ('Jr Developer', 80000, 2);
 
 -- add an employee
 INSERT INTO employees (first_name, last_name, role_id, manager_id) 
@@ -44,43 +44,41 @@ UPDATE employees
 SET role_id = 2
 WHERE id = 16
 
+-- view all departments
+SELECT id, dep_name FROM department
+
+-- view all roles with id and title 
+SELECT id, title FROM roles
+
+-- view all roles with id and title 
+SELECT id, title FROM roles ORDER BY id ASC
+
+-- select all employees
+SELECT employees.first_name, employees.last_name FROM employees
+
 -- -- select all employees; first name, last name
--- SELECT 
---     employees.first_name AS 'First Name', 
---     employees.last_name AS 'Last Name' 
--- FROM employees
+SELECT id, first_name, last_name FROM employees ORDER BY id ASC;
 
--- -- select all employees by full name 
--- SELECT CONCAT(employees.first_name, " ", employees.last_name) AS "Name"
--- FROM employees
+-- select title from roles table
+SELECT title FROM roles
 
--- -- last name, first name
--- SELECT CONCAT(employees.last_name, ", ", employees.first_name) AS "Name"
--- FROM employees
--- ORDER BY
--- employees.last_name ASC
 
--- -- select all job titles
--- SELECT title AS 'Job Title' FROM roles
--- -- with role id:
--- SELECT id AS "Role ID", title AS 'Job Title' FROM roles
+-- select all employees by full name 
+SELECT id as "Employee ID", CONCAT(employees.first_name, " ", employees.last_name) AS "Name"
+FROM employees
 
 -- -- select all managers, sort by last name
--- SELECT CONCAT(manager.first_name, " ", manager.last_name) AS "Manager"
--- FROM employees
---     JOIN roles ON employees.role_id = roles.id
---     JOIN employees AS manager ON employees.manager_id = manager.id
--- ORDER BY 
---     manager.last_name ASC;
+SELECT CONCAT(manager.first_name, " ", manager.last_name) AS "Manager"
+FROM employees
+    JOIN roles ON employees.role_id = roles.id
+    JOIN employees AS manager ON employees.manager_id = manager.id
+ORDER BY 
+    manager.last_name ASC;
 
 
 -- update employee managers
-
 -- view all employees by manager
-
-
 -- view all employees by department
 -- delete a department
 -- delete a role
--- delete an employee
 -- view total utilized budget of a specific department
