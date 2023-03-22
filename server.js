@@ -1,8 +1,9 @@
 // Import and require
-const cTable = require('console.table');
 const figlet = require('figlet');
 const colors = require('colors/safe');
 colors.enable();
+// if user wants to disable colors
+// colors.disable();
 
 const db = require('./config/connection');
 const initialPrompt = require('./lib/initialPrompt');
@@ -31,9 +32,3 @@ db.connect((err) => {
   console.log(``);
   initialPrompt();
 });
-
-
-
-
-
-

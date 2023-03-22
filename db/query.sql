@@ -44,8 +44,31 @@ UPDATE employees
 SET role_id = 2
 WHERE id = 16
 
+-- select all employees; first name, last name
+SELECT 
+    employees.first_name AS 'First Name', 
+    employees.last_name AS 'Last Name' 
+FROM employees
+
+-- select all job titles
+SELECT title AS 'Job Title' FROM roles
+-- with role id:
+SELECT id AS "Role ID", title AS 'Job Title' FROM roles
+
+-- select all managers, sort by last name
+SELECT CONCAT(manager.first_name, " ", manager.last_name) AS "Manager"
+FROM employees
+    JOIN roles ON employees.role_id = roles.id
+    JOIN employees AS manager ON employees.manager_id = manager.id
+ORDER BY 
+    manager.last_name ASC;
+
+
 -- update employee managers
+
 -- view all employees by manager
+
+
 -- view all employees by department
 -- delete a department
 -- delete a role
