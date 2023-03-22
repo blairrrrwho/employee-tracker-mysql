@@ -1,17 +1,14 @@
--- view all departments / SELECT * FROM department
-SELECT 
-    department.id AS "Department ID", department.dep_name AS "Department" 
+-- view all departments
+SELECT id AS "Department ID", dep_name AS "Department" 
 FROM department
 
--- view all roles / SELECT * FROM roles
-SELECT 
-    roles.id AS "Role ID", roles.title AS "Job Title",
-    department.dep_name AS "Department", salary AS "Salary"
+-- view all roles
+SELECT roles.id AS "Role ID", roles.title AS "Job Title", department.dep_name AS "Department", salary AS "Salary"
 FROM roles
 INNER JOIN department ON roles.department_id = department.id
 ORDER BY roles.id ASC
 
--- view all employees / SELECT * FROM employees
+-- view all employees
 SELECT 
     employees.id AS "Employee ID", 
     employees.first_name AS "First Name", 
@@ -25,52 +22,49 @@ FROM employees
     JOIN department ON roles.department_id = department.id
     LEFT JOIN employees AS manager ON employees.manager_id = manager.id
 ORDER BY 
-    employees.last_name ASC;
+    employees.id ASC;
 
--- add a department
+-- add department
 INSERT INTO department (dep_name) 
-VALUES ("Field Ops")
+VALUES ('Field Ops')
 
--- add a role
+-- add role
 INSERT INTO roles (title, salary, department_id) 
-VALUES ('Jr Developer', 80000, 2);
+VALUES ('Assistant', 60000, 4);
 
--- add an employee
+-- view all roles with id and title 
+--> for addEmployee and updateEmployee initial query 
+SELECT id, title FROM roles
+
+-- view id, first_name and last_name from employees
+-- for addEmployee
+SELECT id, first_name, last_name FROM employees ORDER BY id ASC
+
+-- add employee
 INSERT INTO employees (first_name, last_name, role_id, manager_id) 
-VALUES ("Lauren", "Mountains", 7, 17);
+VALUES ('Lauren', 'Mountains', 7, 'null')
 
 -- update employee role
 UPDATE employees
-SET role_id = 2
-WHERE id = 16
+SET role_id = 5
+WHERE id = 9
 
--- view all departments
-SELECT id, dep_name FROM department
+-- 
+-- select all employees by first name, last name 
+SELECT employees.first_name AS 'First Name', 
+employees.last_name AS 'Last Name' 
+FROM employees
 
--- view all roles with id and title 
-SELECT id, title FROM roles
-
--- view all roles with id and title 
-SELECT id, title FROM roles ORDER BY id ASC
-
--- select all employees
-SELECT employees.first_name, employees.last_name FROM employees
-
--- -- select all employees; first name, last name
-SELECT id, first_name, last_name FROM employees ORDER BY id ASC;
-
--- select title from roles table
-SELECT title FROM roles
-
+-- select title from roles table 
+SELECT title AS 'Job Title' FROM roles
 
 -- select all employees by full name 
 SELECT id as "Employee ID", CONCAT(employees.first_name, " ", employees.last_name) AS "Name"
 FROM employees
 
--- -- select all managers, sort by last name
+-- select all managers, sort by last name; add department 
 SELECT CONCAT(manager.first_name, " ", manager.last_name) AS "Manager"
 FROM employees
-    JOIN roles ON employees.role_id = roles.id
     JOIN employees AS manager ON employees.manager_id = manager.id
 ORDER BY 
     manager.last_name ASC;

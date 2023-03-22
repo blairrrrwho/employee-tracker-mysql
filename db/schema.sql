@@ -13,8 +13,8 @@ CREATE TABLE roles (
   title VARCHAR(30) NOT NULL,
   salary DECIMAL,
   department_id INT,
-  CONSTRAINT fk_department
-  FOREIGN KEY (department_id)
+  CONSTRAINT fk_department 
+  FOREIGN KEY (department_id) 
   REFERENCES department(id) ON DELETE SET NULL
 );
 
@@ -24,10 +24,10 @@ CREATE TABLE employees (
   last_name VARCHAR(30) NOT NULL,
   role_id INT NOT NULL,
   manager_id INT,
-  CONSTRAINT fk_employees
-  FOREIGN KEY (manager_id)
+  CONSTRAINT fk_employees 
+  FOREIGN KEY (manager_id) 
   REFERENCES employees(id),
-  CONSTRAINT fk_role
-  FOREIGN KEY (role_id)
+  CONSTRAINT fk_role 
+  FOREIGN KEY (role_id) 
   REFERENCES roles(id)
 );
