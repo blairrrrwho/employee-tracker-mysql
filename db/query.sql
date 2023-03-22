@@ -30,7 +30,7 @@ VALUES ('Field Ops')
 
 -- add role
 INSERT INTO roles (title, salary, department_id) 
-VALUES ('Assistant', 60000, 4);
+VALUES ('Coordinator', 75000, 2);
 
 -- view all roles with id and title 
 --> for addEmployee and updateEmployee initial query 
@@ -39,6 +39,10 @@ SELECT id, title FROM roles
 -- view id, first_name and last_name from employees
 -- for addEmployee
 SELECT id, first_name, last_name FROM employees ORDER BY id ASC
+
+SELECT id, employees.first_name, employees.last_name FROM employees
+
+SELECT employees.id, employees.first_name, employees.last_name FROM employees;
 
 -- add employee
 INSERT INTO employees (first_name, last_name, role_id, manager_id) 

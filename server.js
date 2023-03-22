@@ -22,7 +22,7 @@ db.connect((err) => {
   );
   console.log(``);
   console.log(colors.rainbow(figlet.textSync('            Employee')));
-  console.log(colors.rainbow(figlet.textSync('             Manager')));
+  console.log(colors.rainbow(figlet.textSync('                Tracker')));
   console.log(``);
   console.log(
     colors.gray(
