@@ -20,10 +20,22 @@ This application is a backend solution for managing a company's employees using 
 
 
 ## Installation
+A. Just to run the application: 
+1. Clone the repo down onto your local machine
+2. Open the project and make sure your terminal is in the project folder
+3. Run an npm i in the CLI to ensure you have the necessary packages installed 
+
+B. To make any edits on the backend before initializing: 
+1. Log in to MySQL by using the command: mysql -u root -p
+    - When prompted, enter your password for MySQL
+2. SHOW DATABASES; --> will show all of your MySQL databases; USE employees_db (this database)
+3. While in MySQL, you can edit the seeds.sql file to quickly personalize your app insead of deleting the dummy data while in the app
+4. Be sure to use the command: source db/schema.sql and source db/seeds.sql to update your changes before running the app
 
 
 ## Usage (Instructions/How-To Use)
-
+To use this application, go through the necessary installation requirements (installation procees A, listed above, is required). Once completed, use the terminal to initialize the application; command: npm start (or node server).  
+Follow the prompts and when finsihed, choose the exit option to quit the app. 
 
 ## Demo
 Full Demo: <a href="deployed link">Video</a>
@@ -45,7 +57,6 @@ Those include: figlet, colors, console.table, inquirer, mysql2, dotenv
 
 
 ## License
-This project is licensed under the MIT license. For more information about this license and what it entails visit: https://opensource.org/licenses/MIT
 This project is licensed under the MIT license. For more information about this license and what it entails, visit the MIT website <a href="https://opensource.org/licenses/MIT">here<a/>
 
 
