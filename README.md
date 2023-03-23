@@ -38,14 +38,20 @@ To use this application, go through the necessary installation requirements (ins
 Follow the prompts and when finsihed, choose the exit option to quit the app. 
 
 ## Demo
-Full Demo: <a href="deployed link">Video</a>
+Full Demo: <a href="https://vimeo.com/810746221">Video</a>
 
 <!-- in the parentheses is just the relative path to the screenshot-->
-![alt text](assets/images/screenshot.png)
+![Demo GIF](./assets/FullDemoVid.gif)
 
 
 ## Screenshots
-![alt text](assets/images/screenshot.png)
+Intro Prompt: ![Screenshot 1](./assets/screenshot1.png)  
+  
+View all Departments, Roles, Employees: ![Screenshot 2](./assets/screenshot2.png)  
+
+Add new Department, Role, Employee: ![Screenshot 3](/assets/screenshot3.png)  
+
+Update Employee Role, Delete Employee, End: ![Screenshot 4](./assets/screenshot5.png)
 
 ## Technologies
 JavaScript, Node.js, MySQL
@@ -57,14 +63,11 @@ Those include: figlet, colors, console.table, inquirer, mysql2, dotenv
 
 
 ## License
-This project is licensed under the MIT license. For more information about this license and what it entails, visit the MIT website <a href="https://opensource.org/licenses/MIT">here<a/>
+This project is licensed under the MIT license. For more information about this license and what it entails, visit the MIT website <a href="https://opensource.org/licenses/MIT">here</a>
 
 
 ## Credits
-List your collaborators, if any, with links to their GitHub profiles.
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-If you followed tutorials, include links to those here as well.
-
+BRANDON THOMPSON AND CHRISTINA HALL. 
 
 ## Contact / Questions
   If you liked this project and want to see more, feel free to check out my other repos [here](https://github.com/blairrrrwho).  
